@@ -4,6 +4,7 @@ public class Customer {
   private int luggage;
   private String email;
   private String seat;
+  private String seatR; //RETURN FLIGHT SEAT IF NEEDED
   private int birthDay;
   private int birthMonth;
   private int birthYear;
@@ -14,18 +15,20 @@ public class Customer {
     luggage = 0;
     email = "";
     seat = "";
+    seatR = "";
     birthDay = 0;
     birthMonth = 0;
     birthYear = 0;
 
   }
 
-  public Customer(String firstName, String lastName, int luggage, String email, String seat, int birthDay, int birthMonth, int birthYear){
+  public Customer(String firstName, String lastName, int luggage, String email, String seat, String seatR, int birthDay, int birthMonth, int birthYear){
     this.firstName = firstName;
     this.lastName = lastName;
     this.luggage = luggage;
     this.email = email;
     this.seat = seat;
+    this.seatR = seatR;
     this.birthDay = birthDay;
     this.birthMonth = birthMonth;
     this.birthYear = birthYear;
@@ -38,6 +41,7 @@ public class Customer {
     luggage = c.getLuggage();
     email = c.getEmail();
     seat = c.getSeat();
+    seatR = c.getSeatR();
     birthDay = c.getBirthDay();
     birthMonth = c.getBirthMonth();
     birthYear = c.getBirthYear();
@@ -63,6 +67,10 @@ public class Customer {
 
   public void setSeat(String seat){
     this.seat = seat;
+  }
+
+  public void setSeatR(String seatR){
+    this.seatR = seatR;
   }
 
   public void setBirthDay(int birthDay){
@@ -97,6 +105,10 @@ public class Customer {
 
   public String getSeat(){
     return seat;
+  }
+
+  public String getSeatR(){
+    return seatR;
   }
 
   public int getBirthDay(){

@@ -2,47 +2,39 @@ public class Flight{
   private String toAirCode;
   private String fromAirCode;
   private int planeNumber;
-  private String boardingTime;
   private String departTime;
   private String arrivalTime;
   private String gate;
   private String departDate;
-  private String arrivalDate;
 
   public Flight(){ //Explicit Empty Constructor
     toAirCode = "";
     fromAirCode = "";
     planeNumber = 0;
-    boardingTime = "";
     departTime = "";
     arrivalTime = "";
     gate = "";
     departDate = "";
-    arrivalDate = "";
   }
 
-  public Flight(String toAirCode, String fromAirCode, int planeNumber, String boardingTime, String departTime, String arrivalTime, String gate, String departDate, String arrivalDate){
+  public Flight(String toAirCode, String fromAirCode, int planeNumber, String departTime, String arrivalTime, String gate, String departDate){
     this.toAirCode = toAirCode;
     this.fromAirCode = fromAirCode;
     this.planeNumber = planeNumber;
-    this.boardingTime = boardingTime;
     this.departTime = departTime;
     this.arrivalTime = arrivalTime;
     this.gate = gate;
     this.departDate = departDate;
-    this.arrivalDate = arrivalDate;
   }
 
   public Flight(Flight f){ //Copy Constructor
     toAirCode = f.getToAirCode();
     fromAirCode = f.getFromAirCode();
     planeNumber = f.getPlaneNumber();
-    boardingTime = f.getBoardingTime();
     departTime = f.getDepartTime();
     arrivalTime = f.getArrivalTime();
     gate = f.getGate();
     departDate = f.getDepartDate();
-    arrivalDate = f.getArrivalDate();
   }
 
   //Accessor Methods- Setters
@@ -57,10 +49,6 @@ public class Flight{
 
   public void setPlaneNumber(int planeNumber){
     this.planeNumber = planeNumber;
-  }
-
-  public void setBoardingTime(String boardingTime){
-    this.boardingTime = boardingTime;
   }
 
   public void setDepartTime(String departTime){
@@ -79,9 +67,6 @@ public class Flight{
     this.departDate = departDate;
   }
 
-  public void setArrivalDate(String arrivalDate){
-    this.arrivalDate = arrivalDate;
-  }
 
   //Accessor Methods- Getters
 
@@ -95,10 +80,6 @@ public class Flight{
 
   public int getPlaneNumber(){
     return planeNumber;
-  }
-
-  public String getBoardingTime(){
-    return boardingTime;
   }
 
   public String getDepartTime(){
@@ -116,9 +97,4 @@ public class Flight{
   public String getDepartDate(){
     return departDate;
   }
-
-  public String getArrivalDate(){
-    return arrivalDate;
-  }
-
 }
