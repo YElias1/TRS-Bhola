@@ -414,7 +414,11 @@ public class FlightWindow extends JFrame{
 
   private class confirmButton implements ActionListener{
     public void actionPerformed (ActionEvent e){
-      if (departTime == null || returnTime == null){
+      if ((flightArray.length == 2) && (departTime == null || returnTime == null)){
+        errorLabel.setText("SELECT FLIGHT FIRST");
+        errorLabel.setVisible(true);
+      }
+      else if ((flightArray.length == 1) && (departTime == null)){
         errorLabel.setText("SELECT FLIGHT FIRST");
         errorLabel.setVisible(true);
       }
@@ -424,16 +428,10 @@ public class FlightWindow extends JFrame{
           flightArray[0].setDepartTime(departTime);
           if (flightArray.length == 2){
             flightArray[1].setDepartTime(returnTime);
-            System.out.println("Selected Return Time: "+flightArray[1].getDepartTime());
           }
         }
         if (min < max){
-          System.out.println("Current Min: "+min);
-          System.out.println("Selected departTime: "+flightArray[0].getDepartTime());
-          System.out.println("Selected Return Time: "+flightArray[1].getDepartTime());
-          System.out.println("Customer "+min+" Seat #: "+customerArray[min].getSeat());
-          System.out.println("Customer "+min+" Return seat #: "+customerArray[min].getSeatR());
-          if (min+1 != max){ //Displaying the window
+          if (min+1 != max){ //Displaying the window with correct user
             customerLabel.setText("Seat for Customer #"+String.valueOf(min+2)+": ");
             customerLabel2.setText("Seat for Customer #"+String.valueOf(min+2)+": ");
           }
@@ -442,11 +440,10 @@ public class FlightWindow extends JFrame{
           seatGroup2.clearSelection();
           seatField2.setText("");
           min++;
-          //CODE TO GO TO NEXT SCEEN
         }
       }
       if (min == max){
-        CustomerInfoWindow test = new CustomerInfoWindow(customerArray, flightArray);
+        //CustomerInfoWindow test = new CustomerInfoWindow(customerArray, flightArray);
       }
       //CODE TO SET VARIABLE AND PASS
     }

@@ -1081,7 +1081,6 @@ public class InputWindow extends JFrame {
           errorLabel.setVisible(true);
         }
         errorLabel.setText("Missing Date");
-        System.out.println("Depart Date"+departDate);
         errorLabel.setVisible(true);
       }
       else {
@@ -1108,18 +1107,6 @@ public class InputWindow extends JFrame {
                 test.setDepartDate(returnDate);
               }
             }
-            System.out.println("Way: "+way);
-            System.out.println("Lock: "+lock);
-            System.out.println("Customer first name: "+customerArray[0].getFirstName());
-            System.out.println("Passangers: "+passengers);
-            System.out.println("Customer array length: "+customerArray.length);
-            System.out.println("Flight array length: "+flightArray.length);
-            System.out.println("First flight toAirCode: "+flightArray[0].getToAirCode());
-            System.out.println("First flight fromAirCode: "+flightArray[0].getFromAirCode());
-            System.out.println("Second flight toAirCode: "+flightArray[1].getToAirCode());
-            System.out.println("Second flight fromAirCode: "+flightArray[1].getFromAirCode());
-            System.out.println("Depart Date: "+flightArray[0].getDepartDate());
-            System.out.println("Return Date: "+flightArray[1].getDepartDate());
           }
           else {
             flightArray = new Flight[1];
@@ -1128,22 +1115,11 @@ public class InputWindow extends JFrame {
             test.setToAirCode(toAirCode);
             test.setFromAirCode(fromAirCode);
             test.setDepartDate(departDate);
-            System.out.println("Way: "+way);
-            System.out.println("Lock: "+lock);
-            System.out.println("Customer first name: "+customerArray[0].getFirstName());
-            System.out.println("Passangers: "+passengers);
-            System.out.println("Customer array length: "+customerArray.length);
-            System.out.println("Flight array length: "+flightArray.length);
-            System.out.println("Flight toAirCode: "+flightArray[0].getToAirCode());
-            System.out.println("Flight fromAirCode: "+flightArray[0].getFromAirCode());
-            System.out.println("Depart Date: "+departDate);
-            System.out.println("Depart Date from flight: "+flightArray[0].getDepartDate());
           }
           FlightWindow myFlight = new FlightWindow(customerArray, flightArray);
           lock = false;
         }
         else{
-          System.out.println("No more");
           lock = true;
         }
       }
