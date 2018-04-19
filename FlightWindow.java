@@ -446,7 +446,7 @@ public class FlightWindow extends JFrame{
         }
       }
       if (min == max){
-        System.out.println("GO TO NEXT SCREEN");
+        CustomerInfoWindow test = new CustomerInfoWindow(customerArray, flightArray);
       }
       //CODE TO SET VARIABLE AND PASS
     }
